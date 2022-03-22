@@ -1,0 +1,22 @@
+<% content_for :head do %>
+  Out Search Blog Current Tag
+<% end %>
+
+<div class="container page">
+  <div class="row">
+  <% @taggings.each do |tagging| %>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="itemProduct">
+                <%= image_tag(tagging.blog.urlimage, class: "itemProductImg") %>
+                <div class="itemProductGradient"></div>
+                <div class="itemProductDescription">
+                    <h3 class="itemProductDescriptionTitle"><%= tagging.blog.title %></h3>
+                    <p class="itemProductDescriptionDate">Published At : <%= tagging.blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
+                    <p class="itemProductDescriptionContent"><%= strip_tags(tagging.blog.content[0...150]) %> ...</p>
+                    <%= button_to "Read", blog_item_path(:id => tagging.blog.id, :title => tagging.blog.title), method: :get, class: "btn btn-primary text-white" %>
+                </div><!-- end of div itemProductDescription -->
+            </div><!-- end of div itemProduct -->
+        </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+    <% end %>
+  </div>
+</div>

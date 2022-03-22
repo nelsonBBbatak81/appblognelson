@@ -1,0 +1,87 @@
+<% content_for :head do %>
+  <%= @blog.title.titleize %>
+<% end %>
+
+<div class="contentItemBlog">
+    <div class="headerItemBlog">
+        <%= image_tag(@blog.urlimage) %>
+        <div class="contentTitleContentItemBlog">
+            <h2 class="titleContentItemBlog"><%= @blog.title %></h2>
+        </div><!-- end of div contentTitleContentItemBlog -->
+    </div><!-- end of div headerItemBlog -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="contentItemBlogContent">
+                    <p class="dateContentItemBlog"><strong>Published at :</strong> <%= @blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
+                    <div class="descriptionContentItemBlog">
+                        <div class="d-flex justify-content-end align-items-baseline mb-4"><strong class="text-bold"><b>Share :</b> </strong><%= render_shareable :buttons=> ['twitter', 'reddit', 'pinterest', 'linkedin'] %></div>
+                        <%= raw @blog.content %>
+                    </div><!-- end of div descriptionContentItemBlog -->
+                    <div class="tagContentItemBlog">
+                        <% @blog.tags.each do |tag| %>
+                            <%= link_to tag.title, blog_current_tag_path(:id => tag.id), class: "badge badge-pill bg-primary mr-1" %>
+                        <% end %>
+                    </div><!-- end fo div tagContentItemBlog -->
+                </div><!-- end of div contentItemBlogContent -->
+                <div class="commentItemBlog">
+                    <h3 class="commentItemBlogTitle">Comment</h3>
+                    <hr>
+                    <div id="disqus_thread"></div><!-- end of div id disqus_thread -->
+                </div><!-- end of div commentItemBlog -->
+            </div><!-- end of div col-lg-8 col-md-8 col-sm-12 -->
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="contentItemBlogSidebar">
+                    <div class="profileUser">
+                        <%= image_tag "foto-user.png" %>
+                        <div class="profileUserContent">
+                            <h4 class="profileUserContentTitle">nelson Butarbutar</h4>
+                            <p class="profileUserContentDescription">I am a web developer, I can help you in building a modern and dynamic website using Ruby on Rails and Reactjs.</p>
+                            <%= link_to "Get To Know Me", about_path, class: 'btn btn-success btn-sm' %>
+                        </div><!-- end of div profileUserContent -->
+                    </div><!-- end of div profileUser -->
+
+                    <div class="contentItemBlogSidebarListBlogRelate">
+                        <h4 class="contentItemBlogSidebarListBlogRelateTitle">Blog Relate >></h4>
+                        <hr>
+                        <% @blogrelate.each do |blogItem| %>
+                        <div class="contentItemBlogSidebarListBlogRelateItem">
+                            <div class="row">
+                                <div class="col-sm-6"><%= image_tag(blogItem.urlimage, class: 'contentItemBlogSidebarListBlogRelateItemImage') %></div>
+                                <div class="col-sm-6">
+                                    <div class="contentItemBlogSidebarListBlogRelateItemContent">
+                                        <h5 class="contentItemBlogSidebarListBlogRelateItemContenttitle"><%= blogItem.title %></h5>
+                                        <p class="contentItemBlogSidebarListBlogRelateItemContentDate"><%= blogItem.created_at.strftime("%A - %b %d, %Y") %></p>
+                                        <p class="contentItemBlogSidebarListBlogRelateItemContentDescription"><%= strip_tags(blogItem.content[0...60]) %> ...</p>
+                                        <%= button_to "Read", blog_item_path(:id => blogItem.id, :title => blogItem.title), method: :get, class: "btn btn-outline-dark btn-sm" %>
+                                    </div><!-- end of div contentItemBlogSidebarListBlogRelateItemContent -->
+                                </div><!-- end of div col-sm-6 -->
+                            </div><!-- end of div row -->
+                        </div><!-- end of div contentItemBlogSidebarListBlogRelateItem -->
+                        <% end %>
+                    </div><!-- end of div contentItemBlogSidebarListBlogRelate -->
+                </div><!-- end of div contentItemBlogSidebar -->
+            </div><!-- end of div col-lg-4 col-md-4 col-sm-12 -->
+        </div><!-- end of div  row -->
+    </div><!-- end of div container -->
+</div><!-- end of div contentItemBlog -->
+
+<script>
+
+var disqus_config = function () {
+this.page.url = '<%= url_for([@blog, {only_path: false}]) %>'; 
+this.page.identifier = '<%= @blog.id %>'; 
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//lyuyongle.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  

@@ -1,0 +1,18 @@
+<% content_for :head do %>
+  Edit Category
+<% end %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="d-flex justify-content-between mb-5">
+            <%= link_to 'Show', @category, class: 'btn btn-info' %> 
+            <%= link_to 'Back', categories_path, class: 'btn btn-dark' %>
+        </div>
+        <h1 class="text-dark text-bold text-center mb-3">Editing Category</h1>
+
+        <%= render 'form', category: @category %>
+        </div>
+    </div>
+    
+</div>

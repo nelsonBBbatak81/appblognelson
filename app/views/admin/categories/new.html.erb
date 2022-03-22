@@ -1,0 +1,15 @@
+<% content_for :head do %>
+  Add Category
+<% end %>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="d-flex justify-content-end mb-3"><%= link_to 'Back', categories_path, class: 'btn btn-success' %></div>
+        <h1 class="text-bold text-center text-dark mb-2">New Category</h1>
+
+        <%= render 'form', category: @category %>
+    </div>
+</div>
+
+
+

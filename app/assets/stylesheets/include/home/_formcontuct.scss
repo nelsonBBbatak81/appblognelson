@@ -1,0 +1,20 @@
+/* Styling form contuct */
+.formContuct {
+  padding: 60px 0;
+  background: #ebeced;
+
+  .formContuctForm {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .formContuctForm .formContuctTitle {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .formContuctForm button {
+    align-self: flex-end;
+    align-items: flex-end;
+  }
+}

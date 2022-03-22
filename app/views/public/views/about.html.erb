@@ -1,0 +1,48 @@
+<% content_for :head do %>
+  About
+<% end %>
+
+<div class="container page">
+    <div class="row box-container">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-sm-2"><i class="fa-solid fa-envelope"></i></div>
+                <div class="col-sm-10"><p>butarbutarpondoh@gmail.com</p></div>
+            </div><!-- end of div row -->
+        </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-sm-2"><i class="fa-solid fa-phone-flip"></i></div>
+                <div class="col-sm-10"><p>(082) 345 678</p></div>
+            </div>
+        </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-sm-2"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="col-sm-10"><p>JL. Bah Kapul no. 54, Kel. Sigulanggulang, Kec. Siantar Utara, Kotamadya Pematangsiantar, Sumatra Utara - Indonesia</p></div>
+            </div>
+        </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+    </div><!-- end of div row box-container -->
+    <div class="page content-about p-5">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12"><%= image_tag("foto-user.png", class: "contentAboutimg") %></div>
+            <div class="col-lg-7 col-md-7 col-sm-12 mtsm-2">
+                <h1 class="contentAboutTitle">Nelson Butarbutar</h1>
+                <p class="text-justify">My name is Nelson Butarbutar. I graduated with a bachelor's degree in information systems in the field of computer science at one of the campuses in the city of Pematangsiantar, North Sumatra province. My favorite programming language is the Ruby programming language, especially the Ruby on Rails framework that can be used to build simple or complex web applications. Besides Ruby, another programming language that I am currently working on is the JavaScript programming language, especially the Reactjs framework.</p>
+
+                <div class="d-flex justify-content-end mt-5">
+                    <h3 class="mr-3 contentAboutTitleHeaderIcon">Tuoch Me On</h3>
+                    <a class="btn-icon" href="https://twitter.com/@nelson99595267" target="_blank">
+                        <%= image_tag("twitter-icon.png", class: "contentAboutIcon") %>
+                    </a>
+                    <a class="btn-icon" href="https://web.facebook.com/nbutarbutar@gmail.com" target="_blank">
+                        <%= image_tag("facebook-icon.png", class: "contentAboutIcon") %>
+                    </a>
+                    <a class="btn-icon" href="https://mail.google.com/mail/butarbutarnelson911@gmail.com" target="_blank">
+                        <%= image_tag("google-icon.png", class: "contentAboutIcon") %>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><!-- end of div content-about --> 
+</div><!-- end of div container -->

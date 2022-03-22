@@ -1,0 +1,54 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="footerItemSitemap">
+                    <h3 class="footerItemSitemapTitle">Sitemap</h3>
+                    <ul>
+                        <li><%= link_to "Home", root_path %></li>
+                        <li><%= link_to "About", about_path %></li>
+                        <li><%= link_to "Blog", list_blog_path %></li>
+                    </ul>
+                </div><!-- end of div footerItemSitemap -->
+            </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="footerSocialContuct">
+                    <h3 class="footerSocialContuctTitle">Touch Me On</h3>
+                    <ul>
+                        <li>
+                            <a class="btn-icon" href="https://twitter.com/@nelson99595267" target="_blank">
+                                <%= image_tag("twitter-icon.png", class: "contentAboutIcon") %>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-icon" href="https://web.facebook.com/nbutarbutar@gmail.com" target="_blank">
+                                <%= image_tag("facebook-icon.png", class: "contentAboutIcon") %>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-icon" href="https://mail.google.com/mail/butarbutarnelson911@gmail.com" target="_blank">
+                                <%= image_tag("google-icon.png", class: "contentAboutIcon") %>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- end of div footerSocialContuct -->
+            </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="footerSocialAddress">
+                    <h3 class="footerSocialAddressTitle">Address</h3>
+                    <div class="row">
+                        <div class="col-sm-2"><i class="fas fa-street-view"></i></div>
+                        <div class="col-sm-10"><p>Jl. Bah Kapul no. 54, Kel. Sigulanggulan, Kotamadya Pematangsiantar, Sumatra Utara - Indonesia</p></div>
+                        <div class="col-sm-2"><i class="fas fa-phone"></i></div>
+                        <div class="col-sm-10"><p>(082) 890 234</p></div>
+                        <div class="col-sm-2"><i class="fas fa-envelope"></i></div>
+                        <div class="col-sm-10"><p>nbutarbutar@gmail.com</p></div>
+                    </div>
+                </div><!-- end of div footerItemSitemap -->
+            </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+        </div><!-- end of div row -->
+        <div class="mt-5 d-flex justify-content-center">
+            <p class="text-white"><%= link_to "www.blog-nelson.com", root_path, class: 'text-white' %> - copyright 2021</p>
+        </div>
+    </div><!-- end of div container -->
+</footer>

@@ -1,0 +1,39 @@
+<div class="menu-item-tablet-mobile">
+  <%= image_tag "icon-close.png", class: 'img-close-item-menu-mobile' %>
+        <ul>
+          <li>
+                <%= link_to root_path do %><i class="fas fa-home mr-1"></i><span>Home</span><% end %>
+              </li>
+              <li class="<%= active_class(about_url) %>">
+                <%= link_to about_path do %><i class="fas fa-sticky-note mr-1"></i><span>About</span><% end %>
+              </li>
+              <li class="<%= active_class(list_blog_url) %>">
+                <%= link_to list_blog_path do %><i class="fas fa-rss-square mr-1"></i><span>Blog</span><% end %>
+              </li>
+              <li id="icon-search-tablet">
+                <i class="fas fa-search text-white"></i>
+              </li>
+          <% if current_user %>
+                <li>
+                  <div id="dropdownMenuMobile">
+                    <button id="buttonMenuMobile"><%= current_user.email %><i class="fa fa-angle-down ml-1"></i></button>
+                    <div id="dropdownMenuItemMobile">
+                      <ul>
+                        <li><i class="fa-solid fa-user-gear mr-1"></i><%= link_to "Profile", edit_user_registration_path %></li>
+                        <li><i class="fa-solid fa-screwdriver-wrench mr-1"></i><%= link_to "Admin", home_admin_path %></li>
+                        <li><%= button_to "Logout", destroy_user_session_path, method: :delete %></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt mr-1"></i><span>Sign In</span><% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path do %><i class="fas fa-user-plus mr-1"></i><span>Sign Up</span><% end %>
+                </li>
+              <% end %>
+        </ul>
+      </div>
+      <!-- end of div menu-item-tablet-mobile -->

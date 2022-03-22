@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :head %> | Appblognelson</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>
+
+    <script type="text/javascript" src = "../../assets/third_party/font_awesome.min.js"></script>
+    <script type="text/javascript" src = "../../assets/third_party/embedly.min.js"></script>
+    <script type="text/javascript" src = "../../assets/third_party/image_tui.min.js"></script>
+    <script type="text/javascript" src = "../../assets/third_party/spell_checker.min.js"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+
+  <body>
+    <%= render 'shared/menu_tablet_mobile' %>
+    <%= render 'shared/navigation' %>
+    <%= render 'shared/form_search_blog' %>
+    <%= render 'shared/message' %>
+    
+    <%= yield %>
+    
+    <%= render 'shared/footer' %>
+  </body>
+</html>

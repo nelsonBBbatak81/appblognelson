@@ -1,0 +1,38 @@
+<% content_for :head do %>
+  List Blog
+<% end %>
+
+<div class="headerListBlog">
+    <%= image_tag "imagelistblog03.png", class: "headerListBlogImg" %>
+    <div class="headerListBlogContent">
+        <div class="headerListBlogContentItem">
+            <h1 class="headerListBlogContentItemTitle">List Of Blog</h1>
+        </div><!-- end odiv headerListBlogContentItem -->
+    </div><!-- end of div headerListBlogContent -->
+</div><!-- end of div headerListBlog -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="contentListBlog">
+                <% @blogs.each do |blog| %>
+                <div class="contentListBlogItem">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12"><%= image_tag(blog.urlimage, class: "contentListBlogItemImg") %></div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="contentListBlogItemContent">
+                                <h3 class="contentListBlogItemContentTitle"><%= blog.title %></h3>
+                                <p class="contentListBlogItemContentDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
+                                <p class="contentListBlogItemContentDescription"><%= strip_tags(blog.content[0...150]) %> ...</p>
+                                <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary btn-md" %>
+                            </div><!-- end of div contentListBlogItemContent -->
+                        </div><!-- end of div col-md-6 col-sm-12 -->
+                    </div><!-- end of div row -->
+                </div><!-- end of div contentListBlogItem -->
+                <% end %>
+            </div><!-- end of div contentListBlog -->
+        </div><!-- end of div col-md-8 offset-md-4 -->
+    </div><!-- end of div row -->
+    <div class="d-flex justify-content-center digg_pagination mt-4 mb-4">
+        <%= will_paginate @blogs %>
+    </div>
+</div><!-- end of div container -->

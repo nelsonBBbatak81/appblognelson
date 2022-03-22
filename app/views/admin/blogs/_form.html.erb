@@ -1,0 +1,57 @@
+<%= form_with(model: blog, local: true) do |form| %>
+  <% if blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+        <% blog.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row mb-3">
+    <%= form.label :title, class: 'col-md-2 col-sm-12' %>
+    <div class="col-md-10 col-sm-12">
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :category_id, class: "col-lg-2 col-md-2 col-sm-12" %>
+    <div class="col-lg-10 col-md-10 col-sm-12">
+      <%= form.collection_select :category_id, Category.all, :id, :title, {}, { class: 'form-control' } %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :content, class: 'col-md-2 col-sm-12' %>
+    <div class="col-md-10 col-sm-12">
+      <%= form.text_area :content %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :urlimage, class: "col-md-2 col-sm-12" %>
+    <div class="col-md-10 col-sm-12">
+      <%= form.file_field :urlimage, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <%= form.label :tag_list , class: "col-lg-2 col-md-2 col-sm-12" %>
+    <div class="col-lg-10 col-md-10 col-sm-12">
+      <% if @blog.valid? %>
+        <%= form.text_field :tag_list, value: @blog.tags.pluck(:title), class: "form-control" %>
+      <% else %>
+        <%= form.text_field :tag_list, class: "form-control" %>
+      <% end %>
+      <span class="text-muted">Please enter tag using comma like (data, blog, ..)</span>
+    </div>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.submit(class: 'btn btn-primary') %>
+  </div>
+<% end %>

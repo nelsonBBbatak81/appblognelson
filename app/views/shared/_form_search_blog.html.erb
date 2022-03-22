@@ -1,0 +1,14 @@
+<div class="header-search-blog">
+    <div class="content">
+        <%= image_tag "icon-close.png", class: 'btn-search' %>
+        <div class="content-form">
+        <form action="<%= search_blog_url %>" method="get">
+            <div class="form-search">
+            <input type="text" name="query" placeholder="Search blog ..." />
+            <button type="submit">Search</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<!-- end of div header-search-blog-->

@@ -1,0 +1,38 @@
+/* Styling section list interesting skill */
+.sectionInterestingSkill {
+  padding: 60px 0;
+  background: #f8f9fa;
+
+  .sectionInterestingSkillHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+
+    .sectionInterestingSkillTitle {
+      font-size: 50px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    hr {
+      width: 30%;
+      height: 4px;
+      background: #e76f51;
+    }
+  }
+  .sectionInterestingSkillItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: centers;
+
+    .sectionInterestingSkillItemImage {
+      margin-bottom: 30px;
+      height: 100px;
+    }
+    .sectionInterestingSkillItemContent {
+      text-align: center;
+    }
+  }
+}

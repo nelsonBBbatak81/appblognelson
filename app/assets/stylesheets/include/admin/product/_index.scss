@@ -1,0 +1,11 @@
+.title {
+  color: $colorDark;
+  text-decoration: none;
+  transition: 500ms ease-in-out;
+
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+@import 'show';

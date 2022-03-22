@@ -1,0 +1,28 @@
+<% content_for :head do %>
+  Out Search Blog
+<% end %>
+
+<div class="container page">
+    <% if @blogs.exists? %>
+    <h3 class="text-bold">Output search blog with key word <strong><%= params[:query] %></strong> >></h3>
+    <hr class="mb-3">
+    <div class="row">
+        <% @blogs.each do |blog| %>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                <div class="itemProduct">
+                        <%= image_tag(blog.urlimage, class: "itemProductImg") %>
+                        <div class="itemProductGradient"></div>
+                        <div class="itemProductDescription">
+                            <h3 class="itemProductDescriptionTitle"><%= blog.title %></h3>
+                            <p class="itemProductDescriptionDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
+                            <p class="itemProductDescriptionContent"><%= strip_tags(blog.content[0...150]) %> ...</p>
+                            <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary text-white" %>
+                        </div><!-- end of div itemProductDescription -->
+                    </div><!-- end of div itemProduct -->
+            </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+        <% end %>
+    </div>
+    <% else %>
+    <p>No result found</p>
+    <% end %>
+</div>

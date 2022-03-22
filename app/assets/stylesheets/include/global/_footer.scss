@@ -1,0 +1,56 @@
+/* Styling footer */
+footer {
+  background: #54575a;
+  padding: 60px 0;
+
+  .footerItemSitemap {
+    color: #fff;
+
+    .footerItemSitemapTitle {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    ul li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+    ul li a {
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+  .footerSocialContuct {
+    .footerSocialContuctTitle {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+    ul li {
+      list-style: none;
+      margin-right: 10px;
+    }
+  }
+  .footerSocialAddress {
+    color: #fff;
+
+    .footerSocialAddressTitle {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}

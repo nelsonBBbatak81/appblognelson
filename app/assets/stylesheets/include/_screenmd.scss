@@ -1,0 +1,29 @@
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 150px 0;
+  }
+  .navigation {
+    .navigation-container {
+      margin: 0 30px;
+    }
+  }
+  /* Screen media home page section form contuct */
+  .formContuct {
+    padding: 60px 30px;
+
+    .formContuctForm {
+      max-width: 400px;
+    }
+  }
+
+  /* admin styling screen media */
+  .adminPage {
+    .sidebarMenuAdmin .sidebarMenuAdminListItem ul {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .sidebarMenuAdmin .sidebarMenuAdminListItem ul li {
+      padding: 5px 10px;
+    }
+  }
+}

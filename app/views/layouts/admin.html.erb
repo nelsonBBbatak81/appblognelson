@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :head %> | Appblognelson</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script type="text/javascript" src = "../../assets/froala_editor.pkgd.min.js"></script>
+
+    <script type="text/javascript" src = "../../assets/third_party/font_awesome.min.js"></script>
+    <script type="text/javascript" src = "../../assets/third_party/embedly.min.js"></script>
+    <script type="text/javascript" src = "../../assets/third_party/image_tui.min.js"></script>
+    <script type="text/javascript" src = "../../assets/third_party/spell_checker.min.js"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+
+  <body>
+    <%= render 'shared/menu_tablet_mobile' %>
+    <%= render 'shared/navigation' %>
+    <%= render 'shared/form_search_blog' %>
+    <%= render 'shared/message' %>
+    
+    <div class="container page">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-admin">
+            <li class="nav-item <%= @activehomeadmin ? @activehomeadmin: '' %>"><%= link_to "Home", home_admin_path, class: 'nav-link' %></li>
+            <li class="nav-item <%= @activetagadmin ? @activetagadmin: '' %>"><%= link_to "Tag", tags_path, class: 'nav-link' %></li>
+            <li class="nav-item <%= @activecategoryadmin ? @activecategoryadmin: '' %>"><%= link_to "Category", categories_path, class: 'nav-link' %></li>
+            <li class="nav-item <%= @activeblogadmin ? @activeblogadmin: '' %>"><%= link_to "Blog", blogs_path, class: 'nav-link' %></li>
+          </ul><!-- end of ul nav -->
+        </div><!-- end of div card-header -->
+        <div class="card-body">
+          <div class="container">
+            <%= yield %>
+          </div>
+        </div><!-- end of div card-body -->
+      </div><!-- end of div card -->
+    </div><!-- end of div container -->
+  </body>
+</html>

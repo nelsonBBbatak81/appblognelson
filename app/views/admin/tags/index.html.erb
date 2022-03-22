@@ -1,0 +1,27 @@
+<% content_for :head do %>
+  Tags
+<% end %>
+
+<div class="container">
+    <div class="table-responsive">
+        <h1 class="text-center text-bold text-dark mb-3">Tags</h1>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="cols">Title</th>
+                    <th scope="cols">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @tags.each do |tag| %>
+                <tr>
+                    <td><%= tag.title %></td>
+                    <td>
+                        <%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

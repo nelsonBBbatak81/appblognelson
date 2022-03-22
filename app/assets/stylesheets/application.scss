@@ -1,0 +1,43 @@
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+@import 'bootstrap/scss/bootstrap.scss';
+// @import 'social-share-button';
+@import 'froala_editor.min';
+@import 'froala_style.min';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.page {
+  padding: 100px 0;
+}
+.mr-2 {
+  margin-right: 20px;
+}
+.mr-1 {
+  margin-right: 10px;
+}
+.ml-1 {
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+@import 'include/colors';
+@import 'include/base';
+@import 'include/screenmd';
+@import 'include/screenlg';
+@import 'include/screenxl';
+@import 'include/screensm';

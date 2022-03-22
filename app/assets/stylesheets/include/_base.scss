@@ -1,0 +1,12 @@
+/* Styling global */
+.mr-1 {
+  margin-right: 10px;
+}
+
+@import 'global/index';
+@import 'home/index';
+@import 'itemblog/index';
+@import 'searchblog/index';
+@import 'listblog/index';
+@import 'about/index';
+@import 'admin/index';

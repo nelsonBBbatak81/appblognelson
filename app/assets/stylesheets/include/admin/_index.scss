@@ -1,0 +1,53 @@
+.nav-admin {
+  // display: flex;
+  // flex-direction: row;
+
+  li {
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: $colorDark;
+      transition: 500ms ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        content: '';
+        transition: 500ms ease-in-out;
+        width: 100%;
+        height: 3px;
+        background-color: $colorSecondary;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      a {
+        font-weight: bold;
+        color: $colorSuccess;
+      }
+    }
+
+    &.active {
+      &::after {
+        content: '';
+        transition: 500ms ease-in-out;
+        width: 100%;
+        height: 3px;
+        background-color: $colorSecondary;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      a {
+        font-weight: bold;
+        color: $colorSuccess;
+      }
+    }
+  }
+}
+
+@import 'product/index';

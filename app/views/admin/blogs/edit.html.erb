@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  Edit Blog
+<% end %>
+
+<div class="row">
+    <div class="col-md-8 offset-md-4">
+        <div class="d-flex justify-content-between mb-4">
+            <%= link_to 'Show', @blog, class: 'btn btn-info' %>
+            <%= link_to 'Back', blogs_path, class: 'btn btn-success' %>
+        </div>
+        <h1 class="text-bold text-center text-dark mb-3">Editing Blog</h1>
+
+        <%= render 'form', blog: @blog %>
+    </div>
+</div>
+

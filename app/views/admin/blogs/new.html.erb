@@ -1,0 +1,15 @@
+<% content_for :head do %>
+  Add Blog
+<% end %>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="d-flex justify-content-end mb-4"><%= link_to 'Back', blogs_path, class: 'btn btn-success' %></div>
+        <h1 class="text-bold text-center text-dark mb-3">New Blog</h1>
+
+        <%= render 'form', blog: @blog %>
+    </div>
+</div>
+
+
+

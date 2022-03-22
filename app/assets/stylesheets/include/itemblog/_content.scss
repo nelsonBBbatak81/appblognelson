@@ -1,0 +1,20 @@
+.contentItemBlog {
+  .dateContentItemBlog {
+    color: rgb(109, 104, 104);
+    font-size: 14px;
+    font-weight: 200;
+    margin-bottom: 10px;
+  }
+  .descriptionContentItemBlog {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 28px;
+    text-align: justify;
+  }
+  .tagContentItemBlog {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+}

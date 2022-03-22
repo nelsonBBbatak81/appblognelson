@@ -1,0 +1,13 @@
+.contentShowBlog {
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: $colorDark;
+    text-decoration: none;
+    transition: 500ms ease-in-out;
+
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+}

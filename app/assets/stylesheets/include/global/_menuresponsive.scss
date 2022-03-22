@@ -1,0 +1,98 @@
+/* Styling menu tablet mobile */
+.menu-item-tablet-mobile {
+  display: none;
+  z-index: 300;
+  position: absolute;
+  background: #212529;
+  opacity: 90%;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  transition: 500ms ease-in;
+  margin: 0;
+  overflow-x: hidden;
+}
+.menu-item-tablet-mobile.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-item-tablet-mobile .img-close-item-menu-mobile {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.menu-item-tablet-mobile .img-close-item-menu-mobile:hover {
+  box-shadow: 0px 18px 20px rgba(255, 255, 255, 0.25);
+}
+.menu-item-tablet-mobile ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  padding: 0;
+}
+.menu-item-tablet-mobile ul li {
+  list-style: none;
+
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0;
+  transition: 500ms ease-in;
+}
+.menu-item-tablet-mobile ul li a {
+  text-decoration: none;
+
+  color: #f8f9fa;
+  font-size: 16px;
+  font-weight: bold;
+}
+.menu-item-tablet-mobile ul li a img {
+  margin-right: 10px;
+}
+.menu-item-tablet-mobile ul li:hover {
+  background: #0d6efd;
+  cursor: pointer;
+}
+.menu-item-tablet-mobile ul li form input[type='submit'] {
+  background: transparent;
+  border-width: 0;
+  color: #f8f9fa;
+  font-size: 16px;
+}
+.menu-item-tablet-mobile ul #dropdownMenuMobile {
+  position: relative;
+}
+.menu-item-tablet-mobile ul #dropdownMenuMobile #buttonMenuMobile {
+  background: transparent;
+  border-width: 0;
+  font-size: 22px;
+  color: #f8f9fa;
+}
+.menu-item-tablet-mobile ul #dropdownMenuMobile #dropdownMenuItemMobile {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: -100px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgb(136, 145, 145);
+}
+.menu-item-tablet-mobile
+  ul
+  #dropdownMenuMobile
+  #dropdownMenuItemMobile
+  ul
+  li
+  a {
+  font-size: 18px !important;
+}
+.menu-item-tablet-mobile ul #dropdownMenuMobile #dropdownMenuItemMobile.active {
+  display: block;
+}

@@ -1,0 +1,15 @@
+<% content_for :head do %>
+  Show Category
+<% end %>
+
+<div class="container">
+  <div class="d-flex justify-content-between mb-5">
+      <%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-dark' %> 
+      <%= link_to 'Back', categories_path, class: 'btn btn-success' %>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-12"><strong>Title :</strong></div>
+      <col-md-10 class="col-md-10 col-sm-12"><%= @category.title %></col-md-10>
+    </div>
+</div>
+

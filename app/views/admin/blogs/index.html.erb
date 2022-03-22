@@ -1,0 +1,42 @@
+<% content_for :head do %>
+  List Blog
+<% end %>
+
+<div class="container">
+  <h1 class="text-bold text-center text-dark mb-3">Blogs</h1>
+  <div class="d-flex justify-content-end mb-1"><%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %></div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="cols">Title</th>
+          <th scope="cols">Category</th>
+          <th scope="cols">Content</th>
+          <th scope="cols">Tags</th>
+          <th scope="cols" colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @blogs.each do |blog| %>
+          <tr>
+            <td><%= link_to blog.title, blog_item_path(:id => blog.id, :title => blog.title), class: 'title text-capitalize' %></td>
+            <td><%= blog.category.title %></td>
+            <td><%= strip_tags(blog.content[0...100]) %> ...</td>
+            <td>
+              <% blog.tags.each do |tag| %>
+                <%= link_to tag.title, blog_current_tag_path(:id => tag.id), class: "badge badge-pill bg-primary" %>
+              <% end %>
+            </td>
+            <td class="d-flex">
+              <%= link_to 'Show', blog, class: 'btn btn-outline-default btn-sm mr-1' %>
+              <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-outline-info btn-sm mr-1' %>
+              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

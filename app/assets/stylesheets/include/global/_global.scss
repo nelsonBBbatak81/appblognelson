@@ -1,0 +1,101 @@
+.img-circle {
+  border-radius: 50%;
+}
+.itemProduct {
+  position: relative;
+  height: 300px;
+  border-radius: 15px;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 1);
+  }
+  .itemProductImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  .itemProductGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000a3;
+    border-radius: 10px;
+  }
+  .itemProductDescription {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .itemProductDescriptionTitle {
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: capitalize;
+      align-self: flex-start;
+      color: $colorLight;
+      margin-bottom: 10px;
+    }
+    .itemProductDescriptionDate {
+      font-size: 13px;
+      font-weight: 200;
+      align-self: flex-end;
+      color: $colorLight;
+      margin-bottom: 5px;
+    }
+    .itemProductDescriptionContent {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: justify;
+      color: $colorLight;
+      margin-bottom: 20px;
+    }
+    .button_to {
+      align-self: flex-end;
+    }
+  }
+}
+.page {
+  padding: 150px 0;
+}
+.message {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0 200px;
+}
+
+.box-container {
+  background: #f8f9fa;
+  box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.btn-icon {
+  background: transparent;
+  border-width: 0;
+}

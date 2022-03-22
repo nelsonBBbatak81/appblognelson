@@ -1,0 +1,127 @@
+<% content_for :head do %>
+  Home
+<% end %>
+
+<div class="sectionHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12"><%= image_tag "foto-user.png", class: "sectionHeaderFoto" %></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                        <div class="sectionHeaderContentUserDescription">
+                            <h1 class="sectionHeaderContentUserDescriptionTitle">Nelson Butarbutar</h1>
+                            <p class="sectionHeaderContentUserDescriptionAbout">I am a web developer, I can help you in building a modern and dynamic website using Ruby on Rails and Reactjs.</p>
+                            <%= link_to "Get To Know About Met", about_path, class: 'btn btn-primary' %>
+                        </div><!-- end of div sectionHeaderContentUserDescription -->
+                    </div>
+                </div><!-- end of div second row sectionheader -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="sectionHeaderSocialContuct">
+                    <h1 class="sectionHeaderSocialContuctTitle">Touch Me On</h1>
+                    <ul>
+                        <li>
+                            <a class="btn-icon" href="https://twitter.com/@nelson99595267" target="_blank">
+                            <%= image_tag("twitter-icon.png", class: "contentAboutIcon") %></a>
+                        </li>
+                        <li>
+                            <a class="btn-icon" href="https://web.facebook.com/nbutarbutar@gmail.com" target="_blank">
+                            <%= image_tag("facebook-icon.png", class: "contentAboutIcon") %></a>
+                        </li>
+                        <li>
+                            <a class="btn-icon" href="https://mail.google.com/mail/butarbutarnelson911@gmail.com" target="_blank">
+                            <%= image_tag("google-icon.png", class: "contentAboutIcon") %> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- end of div first row sectionheader -->
+    </div><!-- end of div container sectionheader -->
+</div><!-- end of div sectionheader -->
+
+<div class="sectionInterestingSkill">
+    <div class="container">
+        <div class="sectionInterestingSkillHeader">
+            <h1 class="sectionInterestingSkillTitle">Interesting On</h1>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="sectionInterestingSkillItem">
+                    <%= image_tag "rails.png", class: "sectionInterestingSkillItemImage" %>
+                    <p class="sectionInterestingSkillItemContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deleniti ex. Esse saepe, voluptate cum dicta laudantium quaerat nam! Delectus?</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="sectionInterestingSkillItem">
+                    <%= image_tag "react.png", class: "sectionInterestingSkillItemImage" %>
+                    <p class="sectionInterestingSkillItemContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deleniti ex. Esse saepe, voluptate cum dicta laudantium quaerat nam! Delectus?</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="sectionInterestingSkillItem">
+                    <%= image_tag "vuejs.png", class: "sectionInterestingSkillItemImage" %>
+                    <p class="sectionInterestingSkillItemContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, deleniti ex. Esse saepe, voluptate cum dicta laudantium quaerat nam! Delectus?</p>
+                </div>
+            </div>
+        </div><!-- end of div row first sectionInterestingSkill -->
+    </div>
+</div><!-- end of div sectionInterestingSkill -->
+
+<div class="sectionBlogList">
+    <div class="sectionBlogListHeader">
+        <h2 class="sectionBlogListHeaderTitle">Blog</h2>
+        <hr>
+    </div><!-- end of div sectionBlogListHeader -->
+    <div class="sectionBlogListContent">
+        <div class="container">
+            <div class="row">
+               <% @blogs.each do |blog| %>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                    <div class="itemProduct">
+                        <%= image_tag(blog.urlimage, class: "itemProductImg") %>
+                        <div class="itemProductGradient"></div>
+                        <div class="itemProductDescription">
+                            <h3 class="itemProductDescriptionTitle"><%= blog.title %></h3>
+                            <p class="itemProductDescriptionDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
+                            <p class="itemProductDescriptionContent"><%= strip_tags(blog.content[0...150]) %> ...</p>
+                            <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary text-white" %>
+                        </div><!-- end of div itemProductDescription -->
+                    </div><!-- end of div itemProduct -->
+                </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->
+                <% end %>
+            </div><!-- end of div row -->
+            <div class="mt-3 d-flex justify-content-center"><%= link_to "See More", list_blog_path, class: 'btn btn-dark' %></div>
+        </div><!-- end of div container -->
+    </div><!-- end of div sectionBlogListContent -->
+</div><!-- end of div sectionBlogList -->
+
+<div class="formContuct">
+    <div class="formContuctForm">
+        <h2 class="formContuctTitle">Please Send Message</h2>
+        <form action="<%= send_message_url %>" method="post" >
+            <div class="mb-3 row">
+                <label for="Name" class="col-lg-2 col-md-4 col-sm-12">Name</label>
+                <div class="col-lg-10 col-md-8 col-sm-12">
+                    <input type="text" name="name" class="form-control" placeholder="Fill your name ..">
+                </div>
+           </div> 
+           <div class="mb-3 row">
+                <label for="Email" class="col-lg-2 col-md-4 col-sm-12">Email</label>
+                <div class="col-lg-10 col-md-8 col-sm-12">
+                    <input type="email" name="email" class="form-control" placeholder="Fill your email ..">
+                </div>
+           </div>  
+           <div class="mb-3 row">
+                <label for="Message" class="col-lg-2 col-md-4 col-sm-12">Message</label>
+                <div class="col-lg-10 col-md-8 col-sm-12">
+                    <textarea name="message" id="" cols="30" rows="5" class="form-control" placeholder="Fill your message .."></textarea>
+                </div>
+           </div> 
+           <div class="mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary btn-lg">Send</button>
+           </div>              
+        </form>
+    </div><!-- end of div formContuctForm -->
+</div><!-- end of div formContuct -->
