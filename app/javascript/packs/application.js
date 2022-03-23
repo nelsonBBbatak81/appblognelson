@@ -9,6 +9,8 @@ require('@rails/activestorage').start();
 require('channels');
 import '@popperjs/core';
 import 'bootstrap';
+import FroalaEditor from 'froala-editor';
+import 'froala-editor/js/plugins/align.min.js';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -18,8 +20,9 @@ import 'bootstrap';
 // const imagePath = (name) => images(name, true)
 
 $(document).on('turbolinks:load', function () {
-  new FroalaEditor('#edit', {});
-  new FroalaEditor('#blog_content', {});
+  // new FroalaEditor('#edit', {});
+  // new FroalaEditor('#blog_content', {});
+  new FroalaEditor('#blog_content');
 
   var menuItem = document.querySelector('.menu-item-tablet-mobile');
   var iconbar = document.querySelector('.icon-bar');
