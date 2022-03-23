@@ -101,6 +101,7 @@
     <div class="formContuctForm">
         <h2 class="formContuctTitle">Please Send Message</h2>
         <form action="<%= send_message_url %>" method="post" >
+            <input type="hidden" name="authenticity_token">
             <div class="mb-3 row">
                 <label for="Name" class="col-lg-2 col-md-4 col-sm-12">Name</label>
                 <div class="col-lg-10 col-md-8 col-sm-12">
