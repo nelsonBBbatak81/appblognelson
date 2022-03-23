@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     @contact.name = params[:name]
     @contact.email = params[:email]
     @contact.message = params[:message]
-    @message.request = request
+    @contact.request = request
     if @contact.deliver
       redirect_to root_path, notice: "Succesfully send message!"
     else
