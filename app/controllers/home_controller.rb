@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
     @blogs = Blog.all
   end
@@ -15,10 +14,12 @@ class HomeController < ApplicationController
     # else
     #   redirect_to root_path, notice: "Failed send message!" 
     # end
+
     @contact = Contact.new()
     @contact.name = params[:name]
     @contact.email = params[:email]
     @contact.message = params[:message]
+    @message.request = request
     if @contact.deliver
       redirect_to root_path, notice: "Succesfully send message!"
     else
@@ -26,4 +27,6 @@ class HomeController < ApplicationController
     end
 
   end
+
+
 end
