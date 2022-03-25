@@ -6,7 +6,7 @@
     <div class="headerItemBlog">
         <%= image_tag(@blog.urlimage) %>
         <div class="contentTitleContentItemBlog">
-            <h2 class="titleContentItemBlog"><%= @blog.title %></h2>
+            <h2 class="titleContentItemBlog title"><%= @blog.title %></h2>
         </div><!-- end of div contentTitleContentItemBlog -->
     </div><!-- end of div headerItemBlog -->
     <div class="container">
@@ -51,7 +51,7 @@
                                 <div class="col-sm-6"><%= image_tag(blogItem.urlimage, class: 'contentItemBlogSidebarListBlogRelateItemImage') %></div>
                                 <div class="col-sm-6">
                                     <div class="contentItemBlogSidebarListBlogRelateItemContent">
-                                        <h5 class="contentItemBlogSidebarListBlogRelateItemContenttitle"><%= blogItem.title %></h5>
+                                        <h5 class="contentItemBlogSidebarListBlogRelateItemContenttitle title"><%= blogItem.title %></h5>
                                         <p class="contentItemBlogSidebarListBlogRelateItemContentDate"><%= blogItem.created_at.strftime("%A - %b %d, %Y") %></p>
                                         <p class="contentItemBlogSidebarListBlogRelateItemContentDescription"><%= strip_tags(blogItem.content[0...60]) %> ...</p>
                                         <%= button_to "Read", blog_item_path(:id => blogItem.id, :title => blogItem.title), method: :get, class: "btn btn-outline-dark btn-sm" %>

@@ -83,7 +83,7 @@
                         <%= image_tag(blog.urlimage, class: "itemProductImg") %>
                         <div class="itemProductGradient"></div>
                         <div class="itemProductDescription">
-                            <h3 class="itemProductDescriptionTitle"><%= blog.title %></h3>
+                            <h3 class="itemProductDescriptionTitle title"><%= blog.title %></h3>
                             <p class="itemProductDescriptionDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
                             <p class="itemProductDescriptionContent"><%= strip_tags(blog.content[0...150]) %> ...</p>
                             <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary text-white" %>

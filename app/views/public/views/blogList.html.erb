@@ -20,7 +20,7 @@
                         <div class="col-md-6 col-sm-12"><%= image_tag(blog.urlimage, class: "contentListBlogItemImg") %></div>
                         <div class="col-md-6 col-sm-12">
                             <div class="contentListBlogItemContent">
-                                <h3 class="contentListBlogItemContentTitle"><%= blog.title %></h3>
+                                <h3 class="contentListBlogItemContentTitle title"><%= blog.title %></h3>
                                 <p class="contentListBlogItemContentDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
                                 <p class="contentListBlogItemContentDescription"><%= strip_tags(blog.content[0...150]) %> ...</p>
                                 <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary btn-md" %>
