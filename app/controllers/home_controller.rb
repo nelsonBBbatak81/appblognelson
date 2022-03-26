@@ -5,17 +5,6 @@ class HomeController < ApplicationController
 
   def sendMessage
 
-    # if params[:name] != '' || params[:email] != '' || params[:message] != ''
-    #   @message = Contact.new(name: params[:name], email: params[:email], message: params[:message])
-    #   # @message.request = request
-    #   # @message.deliver
-    #   ContactMesssageMailer.contuct_message(@message).deliver_now
-
-    #   redirect_to root_path, notice: "Succesfully send message using action mail!" 
-    # else
-    #   redirect_to root_path, notice: "Failed send message!" 
-    # end
-
     @contact = Contact.new()
     @contact.name = params[:name]
     @contact.email = params[:email]

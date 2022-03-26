@@ -19,11 +19,11 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12"><%= image_tag(blog.urlimage, class: "contentListBlogItemImg") %></div>
                         <div class="col-md-6 col-sm-12">
-                            <div class="contentListBlogItemContent">
+                            <div class="contentListBlogItemContent px-2 py-2">
                                 <h3 class="contentListBlogItemContentTitle title"><%= blog.title %></h3>
                                 <p class="contentListBlogItemContentDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
                                 <p class="contentListBlogItemContentDescription"><%= strip_tags(blog.content[0...150]) %> ...</p>
-                                <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary btn-md" %>
+                                <%= button_to "Read", blog_item_path(:id => blog.id, :slug => blog.slug), method: :get, class: "btn btn-primary btn-md" %>
                             </div><!-- end of div contentListBlogItemContent -->
                         </div><!-- end of div col-md-6 col-sm-12 -->
                     </div><!-- end of div row -->

@@ -17,11 +17,7 @@ class Public::ViewsController < PublicController
             render template: "public/views/blog-list-output-search"
         else
             @parameter = params[:query].downcase
-            # @blogs = Blog.search_by_title(params[:query])
-            # @results = Blog.all.where("lower(name) LIKE ?", "%#{@parameter}%")
-            # @results = Blog.joins(:slug, :title).search(params[:query])
             @blogs = Blog.where("lower(title) LIKE ?", "%#{@parameter}%")
-            # @blogs = Blog.where(title: params[:query])
             
             render template: "public/views/blog-list-output-search"
         end

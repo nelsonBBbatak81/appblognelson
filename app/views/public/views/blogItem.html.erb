@@ -54,7 +54,7 @@
                                         <h5 class="contentItemBlogSidebarListBlogRelateItemContenttitle title"><%= blogItem.title %></h5>
                                         <p class="contentItemBlogSidebarListBlogRelateItemContentDate"><%= blogItem.created_at.strftime("%A - %b %d, %Y") %></p>
                                         <p class="contentItemBlogSidebarListBlogRelateItemContentDescription"><%= strip_tags(blogItem.content[0...60]) %> ...</p>
-                                        <%= button_to "Read", blog_item_path(:id => blogItem.id, :title => blogItem.title), method: :get, class: "btn btn-outline-dark btn-sm" %>
+                                        <%= button_to "Read", blog_item_path(:id => blogItem.id, :slug => blogItem.slug), method: :get, class: "btn btn-outline-dark btn-sm" %>
                                     </div><!-- end of div contentItemBlogSidebarListBlogRelateItemContent -->
                                 </div><!-- end of div col-sm-6 -->
                             </div><!-- end of div row -->

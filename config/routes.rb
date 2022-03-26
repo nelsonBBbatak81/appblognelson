@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # route for public page
   scope module: 'public' do
     get 'about' => 'views#about', as: :about
-    get 'blogs/:id/:title' => 'views#blogItem', as: :blog_item
+    get 'blogs/:id/:slug' => 'views#blogItem', as: :blog_item
     get 'blogCurrentTag/:id' => 'views#blogCurrentTag', as: :blog_current_tag
     get 'search-blog' => 'views#search_blog', as: :search_blog
     get 'list-blog' => 'views#listblog', as: :list_blog

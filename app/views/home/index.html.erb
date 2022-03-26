@@ -86,7 +86,7 @@
                             <h3 class="itemProductDescriptionTitle title"><%= blog.title %></h3>
                             <p class="itemProductDescriptionDate">Published At : <%= blog.created_at.strftime("%I:%M%p %A - %b %d, %Y") %></p>
                             <p class="itemProductDescriptionContent"><%= strip_tags(blog.content[0...150]) %> ...</p>
-                            <%= button_to "Read", blog_item_path(:id => blog.id, :title => blog.title), method: :get, class: "btn btn-primary text-white" %>
+                            <%= button_to "Read", blog_item_path(:id => blog.id, :slug => blog.slug), method: :get, class: "btn btn-primary text-white" %>
                         </div><!-- end of div itemProductDescription -->
                     </div><!-- end of div itemProduct -->
                 </div><!-- end of div col-lg-4 col-md-6 col-sm-12 -->

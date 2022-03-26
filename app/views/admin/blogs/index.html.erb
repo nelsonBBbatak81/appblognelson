@@ -20,7 +20,7 @@
       <tbody>
         <% @blogs.each do |blog| %>
           <tr>
-            <td><%= link_to blog.title, blog_item_path(:id => blog.id, :title => blog.title), class: 'title text-capitalize' %></td>
+            <td><%= link_to blog.title, blog_item_path(:id => blog.id, :slug => blog.slug), class: 'title text-capitalize' %></td>
             <td><%= blog.category.title %></td>
             <td><%= strip_tags(blog.content[0...100]) %> ...</td>
             <td>
